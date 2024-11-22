@@ -605,7 +605,7 @@ header{
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 1;
+    opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -625,7 +625,7 @@ header{
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: #FCFCFC;
     border-radius: 4px;
-    padding: 24px;
+    padding: 72px 24px 24px 24px;
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 2px 1px 0px rgba(0, 0, 0, 0.2);
     max-width: 408px;
     min-height: 584px;
@@ -634,7 +634,7 @@ header{
 .modal-close-button {
     position: absolute;
     top: 24px;
-    right:24px;
+    right: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -642,8 +642,8 @@ header{
     border-radius: 50%;
     width: 24px;
     height: 24px;
-    border: 1px solid #0000001A;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-button-icon {
@@ -655,11 +655,11 @@ header{
 .modal-close-button:focus {
     background-color: #404BBF;
     cursor: pointer;
-    border: transparent;
+    border: none;
 }
 
-.modal-close-button:focus .close-button-icon,
-.modal-close-button:hover .close-button-icon {
+.modal-close-button:hover .close-button-icon,
+.modal-close-button:focus .close-button-icon {
     fill: #FFFFFF;
 }
 
@@ -670,7 +670,7 @@ header{
     line-height: 1.5;
     letter-spacing: 0.02em;
     text-align: center;
-    margin: 48px 0 16px;
+    margin-bottom: 16px;
 }
 
 .modal-form {
@@ -689,23 +689,22 @@ header{
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 4px;
 }
 
 .form-input {
     height: 40px;
     width: 100%;
     border-radius: 4px;
-    border: 1px solid #2E2F4266;
+    border: 1px solid rgba(46, 47, 66, 0.4);
     padding-left: 38px;
     outline: transparent;
+    background-color: transparent;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-container {
     position: relative;
-    margin-top: 4px;
 }
 
 .form-input-icon {
@@ -714,15 +713,17 @@ header{
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
-    fill: #2E2F42;
+    fill: rgba(46, 47, 66, 0.4);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input:focus {
+.form-input:focus,
+.form-input:hover {
     border-color: #4D5AE5;
 }
 
-.form-input:focus + .form-input-icon {
+.form-input:focus+.form-input-icon,
+.form-input:hover+.form-input-icon {
     fill: #4D5AE5;
 }
 
@@ -731,9 +732,8 @@ header{
     height: 120px;
     outline: transparent;
     border-radius: 4px;
-    border: 1px solid #2E2F4266;
-    padding-left: 16px;
-    padding-top: 8px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    padding: 8px 16px;
     resize: none;
     margin-bottom: 16px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -743,8 +743,8 @@ header{
     font-size: 12px;
     font-weight: 400;
     line-height: 1.17;
-    letter-spacing: 0.04em;     
-    color: #75757580;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
 }
 
 .comment:focus {
@@ -753,7 +753,6 @@ header{
 
 .checkbox {
     margin-bottom: 24px;
-    
 }
 
 .custom-checkbox {
@@ -773,7 +772,6 @@ header{
 .checkbox-label {
     display: flex;
     align-items: center;
-    flex-direction: row;
     cursor: pointer;
     font-weight: 400;
     font-size: 12px;
@@ -782,8 +780,8 @@ header{
     color: #8e8f99;
 }
 
-.checkbox-input:checked + .checkbox-label>.custom-checkbox {
-    border: transparent;
+.checkbox-input:checked+.checkbox-label>.custom-checkbox {
+    border: none;
     background-color: #404BBF;
     fill: #f4f4fd;
 }
@@ -794,6 +792,7 @@ header{
 }
 
 .modal-button {
+    display: block;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -802,15 +801,16 @@ header{
     color: #fff;
     background-color: #4d5ae5;
     border-radius: 4px;
-    border: transparent;
+    border: none;
     padding: 16px 32px;
     min-width: 169px;
-    min-height: 56px;
+    height: 56px;
     cursor: pointer;
+    margin: 0 auto;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-button:focus,
-.modal-button:hover {
+.modal-button:hover,
+.modal-button:focus {
     background-color: #404BBF;
 }
