@@ -444,22 +444,22 @@ header{
 
 
 .page-footer {
-    background-color: #2E2F42;
+    background-color: #2e2f42;
     padding: 100px 0;
 }
 
-.footer-container{
+.footer-container {
     display: flex;
     align-items: baseline;
 }
 
-.logo-footer{
+.logo-footer {
     display: inline-block;
     margin-bottom: 16px;
 }
 
 .page-footer .footer-text {
-    color: #F4F4FD;
+    color: #f4f4fd;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
@@ -476,9 +476,8 @@ header{
 }
 
 .footer-part-three {
- display: flex;
- flex-direction: row;
- align-items:end
+    display: flex;
+    flex-direction: column;
 }
 
 .part-two-text {
@@ -519,10 +518,23 @@ header{
     cursor: pointer;
 }
 
+.footer_subscribe_text {
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+}
+
+.footer_form {
+    display: flex;
+    gap: 24px;
+}
+
 .label-footer {
     display: flex;
     flex-direction: column;
-    margin-right: 24px;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
@@ -530,8 +542,7 @@ header{
     color: #fff;
 }
 
-.footer-input {
-    margin-top: 16px;
+.footer_input {
     width: 264px;
     height: 40px;
     border-radius: 4px;
@@ -540,45 +551,43 @@ header{
     background-color: transparent;
     padding-left: 16px;
     color: #fff;
-}
-
-.footer-input::placeholder {
     font-size: 12px;
-    font-weight: 400;
     line-height: 2;
     letter-spacing: 0.04em;
-    color: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-.footer-subscribe-button {
+.footer_input::placeholder {
+    color: #ffffff;
+}
+
+.footer_button {
     display: flex;
+    justify-content: center;
     align-items: center;
+    min-width: 165px;
+    height: 40px;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
-    text-align: center;
     color: #fff;
     background-color: #4d5ae5;
     border-radius: 4px;
-    border: transparent;
-    padding: 8px 24px;
-    min-width: 165px;
-    height: 40px;
+    border: none;
     cursor: pointer;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-button-icon {
+.footer_button_icon {
     fill: #fff;
     margin-left: 16px;
 }
 
-.footer-subscribe-button:focus,
-.footer-subscribe-button:hover {
-    background-color: #404BBF;
+.footer_button:focus,
+.footer_button:hover {
+    background-color: #404bbf;
 }
-
 
 
 
